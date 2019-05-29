@@ -10,9 +10,13 @@ MAX_STEER_DELTA = 1
 TOGGLE_DEBUG = False
 
 class CarController(object):
-  def __init__(self, car_fingerprint):
+  def __init__(self, dbc_name, car_fingerprint, enable_camera, vehicle_model):
+	self.packer = CANPacker(dbc_name)
+    self.enable_camera = enable_camera
     self.enabled_last = False
     self.main_on_last = False
+	self.vehicle_model = vehicle_model
+    self.lkas_action = 0
     self.car_fingerprint = car_fingerprint
 
   def update(self, sendcan, enabled, CS, frame, actuators):
