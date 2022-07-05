@@ -67,6 +67,6 @@ smbus-cffi==0.5.1
 smbus2==0.2.0
 sympy==1.1.1
 tqdm==4.23.1
-ujson==1.35
+ujson==5.4.0
 v4l2==0.2
 websocket_client==0.55.0
